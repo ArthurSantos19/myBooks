@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SearchContainer, InputConstainer, ButtonSearch} from "./styles"
+import { SearchContainer, InputConstainer, ButtonSearch, BooksContainer, ResultBooks} from "./styles"
 import {listBooks} from './apiSimulacao'
 
 export function Search() {
@@ -11,17 +11,23 @@ export function Search() {
         setBooks(resultSearch)
     }
     return(
-        <SearchContainer>
-            <h2>Encontre o livro que você deseja!</h2>
-            <InputConstainer onChange={(event) => setSearchValue(event.target.value)} />
-            <ButtonSearch onClick={handleSearch}>Buscar</ButtonSearch>
-            { books.map(book => (
-                <div>
-                    <p key={book.id}>{book.nome}</p>
-                    <img src={book.src}/>
-                </div>
+       <div>
+            <SearchContainer>
+                <h2>Encontre o livro que você deseja!</h2>
+                <InputConstainer onChange={(event) => setSearchValue(event.target.value)} />
+                <ButtonSearch onClick={handleSearch}>Buscar</ButtonSearch>
                 
-            ))}
-        </SearchContainer>
+            </SearchContainer>
+            <ResultBooks>
+                { books.map(book => (
+                    <BooksContainer>
+                        <p key={book.id}>{book.nome}</p>
+                        <img src={book.src}/>
+                    </BooksContainer>
+                    
+                ))}
+            </ResultBooks>
+       </div>
+        
     )
 }
