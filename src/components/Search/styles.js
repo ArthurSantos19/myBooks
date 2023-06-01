@@ -18,3 +18,13 @@ export const InputConstainer = styled.input`
 
     font-size: medium;
 `
+
+export const ButtonSearch = styled.button`
+margin-top: 1rem;
+    width: 6rem;
+    height: 2rem;
+    background-color: #FFD700;
+    display: flex;
+    text-align: center;
+    align-items: center;
+`
