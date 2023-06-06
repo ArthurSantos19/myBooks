@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { SearchContainer, InputConstainer, ButtonSearch, BooksContainer, ResultBooks} from "./styles"
-import {listBooks} from './apiSimulacao'
+import { SearchContainer, InputConstainer, ButtonSearch, ResultNewBooks, BooksContainer, ResultBooks, RecommendationsContainer} from "./styles"
+import {listBooks, newBooks} from './apiSimulacao'
 
 export function Search() {
-    const [books, setBooks] = useState([])
+    const [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+
 
     const handleSearch = () => {
         const resultSearch = listBooks.filter(book => book.nome.includes(searchValue))
@@ -27,7 +28,20 @@ export function Search() {
                     
                 ))}
             </ResultBooks>
+            <RecommendationsContainer>
+            <h1>Últimos Lançamentos!</h1>
+                    <ResultNewBooks>
+                        {newBooks.map(newBook => (
+                            <BooksContainer>
+                                <p key={newBook.id}>{newBook.nome}</p>
+                                <img src={newBook.src}/>
+                            </BooksContainer>
+                        ))}
+                    </ResultNewBooks>
+            </RecommendationsContainer>
        </div>
+
+       
         
     )
 }

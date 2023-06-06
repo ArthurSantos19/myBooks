@@ -30,18 +30,42 @@ export const ButtonSearch = styled.button`
 `
 
 export const ResultBooks = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     text-align: center;
     justify-content: center;
-    gap: 2rem;
+    
 `
 
 export const BooksContainer = styled.div`
     background-color: black;
     color: white;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px 2px #363636;
+    width: 14rem;
+    height: 20rem;
+    margin-top: 2rem;
 
     img {
         width: 10rem;
         height: 15rem;
     }
 `
+
+export const RecommendationsContainer = styled.div`
+    color: #F0E68C;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+`
+
+export const ResultNewBooks = styled.div`
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+`
+
