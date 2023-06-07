@@ -30,10 +30,13 @@ export const ButtonSearch = styled.button`
 `
 
 export const ResultBooks = styled.div`
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     text-align: center;
     justify-content: center;
+    margin: 5rem 10rem 5rem 10rem;
+    background-color: black;
     
 `
 
@@ -41,7 +44,7 @@ export const BooksContainer = styled.div`
     background-color: black;
     color: white;
     border-radius: 2rem;
-    box-shadow: 2px 2px 2px 2px #363636;
+    box-shadow: 1px 1px 4px 1px white;
     width: 14rem;
     height: 20rem;
     margin-top: 2rem;
@@ -52,20 +55,5 @@ export const BooksContainer = styled.div`
     }
 `
 
-export const RecommendationsContainer = styled.div`
-    color: #F0E68C;
-    margin-top: 8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-`
 
-export const ResultNewBooks = styled.div`
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 2rem;
-`
 

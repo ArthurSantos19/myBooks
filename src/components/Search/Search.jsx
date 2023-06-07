@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { SearchContainer, InputConstainer, ButtonSearch, ResultNewBooks, BooksContainer, ResultBooks, RecommendationsContainer} from "./styles"
-import {listBooks, newBooks} from './apiSimulacao'
+import { SearchContainer, InputConstainer, ButtonSearch,  BooksContainer, ResultBooks} from "./styles"
+import {listBooks} from './apiSimulacao'
 
 export function Search() {
     const [books, setBooks] = useState([]);
@@ -28,17 +28,6 @@ export function Search() {
                     
                 ))}
             </ResultBooks>
-            <RecommendationsContainer>
-            <h1>Últimos Lançamentos!</h1>
-                    <ResultNewBooks>
-                        {newBooks.map(newBook => (
-                            <BooksContainer>
-                                <p key={newBook.id}>{newBook.nome}</p>
-                                <img src={newBook.src}/>
-                            </BooksContainer>
-                        ))}
-                    </ResultNewBooks>
-            </RecommendationsContainer>
        </div>
 
        

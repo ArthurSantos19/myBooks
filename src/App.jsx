@@ -1,14 +1,14 @@
-import { Header } from './components/Header/Header';
 import {AppContainer} from './styles'
 import { Search } from './components/Search/Search';
+import { LastRealeases } from './components/LastReleases/LastRealeases';
 
 
 export function App() {
 
   return (
     <AppContainer>
-      <Header />
       <Search />
+      <LastRealeases/>
     </AppContainer>
   
   )

@@ -21,6 +21,9 @@ export const listBooks = [{
 },
 {
     nome: 'O Programador', id: 7, autor: 'Dave Thoma', src: progrPrag
+},
+{
+    nome: 'O Desenvolvedor', id: 12, autor: 'Dave Thoma', src: progrPrag
 }
 ]
 
