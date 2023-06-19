@@ -1,14 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SearchContainer, InputConstainer, ButtonSearch,  BooksContainer, ResultBooks} from "./styles"
 import {listBooks} from './apiSimulacao'
+import { getBooks } from "../../services/books";
 
 export function Search() {
     const [books, setBooks] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const [booksAPI, setBooksAPI] = useState([])
 
+    useEffect(() => {
+        fetchBooks()
+    }, [])
+
+    async function fetchBooks() {
+        const APIbooks = await getBooks()
+        setBooksAPI(APIbooks)
+    }
 
     const handleSearch = () => {
-        const resultSearch = listBooks.filter(book => book.nome.includes(searchValue))
+        const resultSearch = booksAPI.filter(book => book.nome.includes(searchValue))
         setBooks(resultSearch)
     }
     return(
